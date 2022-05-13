@@ -11,12 +11,13 @@
 
 	<groupId>ru.kosmos</groupId>
 	<artifactId>javarush-telegrambot</artifactId>
-	<version>0.0.1</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<name>Javarush TelegramBot</name>
 	<description>Telegram bot for Javarush</description>
 
 	<properties>
 		<java.version>11</java.version>
+		<tgbot.version>5.0.1</tgbot.version>
 	</properties>
 
 	<dependencies>
@@ -30,6 +31,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.telegram</groupId>
+			<artifactId>telegrambots-spring-boot-starter</artifactId>
+			<version>${tgbot.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
