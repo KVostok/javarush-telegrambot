@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<tgbot.version>5.0.1</tgbot.version>
 	</properties>
 
 	<dependencies>
@@ -30,6 +31,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.telegram</groupId>
+			<artifactId>telegrambots-spring-boot-starter</artifactId>
+			<version>${tgbot.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
