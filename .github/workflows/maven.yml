@@ -23,4 +23,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      env:
+        TB_SECRET_TOKEN: ${{ secrets.JRTB_SECRET_TOKEN }}
+      run: mvn -Dtoken=$TB_SECRET_TOKEN -B package --file pom.xml
