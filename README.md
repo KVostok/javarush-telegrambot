@@ -15,6 +15,17 @@ Based on MVP Scope, we can specify next behaviours (here and after Telegram User
 The workflow of finding new posts and send them to subscribers can be viewed here:
 ![Find_New_Posts_WF](https://user-images.githubusercontent.com/16310793/119827993-6c22ec80-bf02-11eb-8759-83bea483db93.png)
 
+## Deployment
+Deployment process as easy as possible:
+Required software:
+- terminal for running bash scripts
+- docker
+- docker-compose
+
+to deploy application, switch to needed branch and run bash script:
+
+`$ bash start.sh ${bot_username} ${bot_token}`
+
 # Technological stack
 - SpringBoot as a skeleton framework
 - Spring Scheduler as a task manager
