@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.0-SNAPSHOT
+
+* JRTB-1: Add repository layer.
+
 ## 0.3.0-SNAPSHOT
 
 * JRTB-13: Add deployment process to the project

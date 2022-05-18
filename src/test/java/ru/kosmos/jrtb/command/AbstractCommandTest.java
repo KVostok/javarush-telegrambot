@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import ru.kosmos.jrtb.bot.JavarushTelegramBot;
 import ru.kosmos.jrtb.service.SendBotMessageService;
 import ru.kosmos.jrtb.service.SendBotMessageServiceImpl;
+import ru.kosmos.jrtb.service.TelegramUserService;
 
 /**
  * Abstract class for testing {@link Command}s.
@@ -17,6 +18,7 @@ abstract class AbstractCommandTest {
 
     protected JavarushTelegramBot javarushBot = Mockito.mock(JavarushTelegramBot.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(javarushBot);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
 
     abstract String getCommandName();
 

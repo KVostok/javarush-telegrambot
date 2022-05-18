@@ -1,11 +1,13 @@
 package ru.kosmos.jrtb.bot;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.kosmos.jrtb.command.CommandContainer;
 import ru.kosmos.jrtb.service.SendBotMessageServiceImpl;
+import ru.kosmos.jrtb.service.TelegramUserService;
 
 import static ru.kosmos.jrtb.command.CommandName.NO;
 
@@ -25,8 +27,9 @@ public class JavarushTelegramBot extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public JavarushTelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public JavarushTelegramBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override
