@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import ru.kosmos.jrtb.command.CommandContainer;
+import ru.kosmos.jrtb.javarushclient.JavaRushGroupClient;
+import ru.kosmos.jrtb.service.GroupSubService;
 import ru.kosmos.jrtb.service.SendBotMessageServiceImpl;
 import ru.kosmos.jrtb.service.TelegramUserService;
 
@@ -28,8 +30,8 @@ public class JavarushTelegramBot extends TelegramLongPollingBot {
     private final CommandContainer commandContainer;
 
     @Autowired
-    public JavarushTelegramBot(TelegramUserService telegramUserService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
+    public JavarushTelegramBot(TelegramUserService telegramUserService, JavaRushGroupClient groupClient, GroupSubService groupSubService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, groupClient, groupSubService);
     }
 
     @Override
