@@ -1,8 +1,13 @@
 # Release Notes
 
+## 0.5.0-SNAPSHOT
+
+*   JRTB-5: Add ability to subscribe on group
+*   JRTB-6: Add ability to get a list of group subscriptions
+
 ## 0.4.0-SNAPSHOT
 
-* JRTB-1: Add repository layer.
+* JRTB-1: Add repository layer
 
 ## 0.3.0-SNAPSHOT
 
