@@ -4,6 +4,7 @@ import ru.kosmos.jrtb.javarushclient.dto.GroupDiscussionInfo;
 import ru.kosmos.jrtb.javarushclient.dto.GroupInfo;
 import ru.kosmos.jrtb.javarushclient.dto.GroupRequestArgs;
 import ru.kosmos.jrtb.javarushclient.dto.GroupsCountRequestArgs;
+import ru.kosmos.jrtb.repository.entity.GroupSub;
 
 import java.util.List;
 
@@ -43,5 +44,13 @@ public interface JavaRushGroupClient {
      * @return {@link GroupDiscussionInfo} object.
      */
     GroupDiscussionInfo getGroupById(Integer id);
+
+    /**
+     * Get last article ID.
+     *
+     * @param groupSub provided {@link GroupSub}.
+     * @return id of last article.
+     */
+    Integer findLastArticleId(Integer groupSub);
 
 }

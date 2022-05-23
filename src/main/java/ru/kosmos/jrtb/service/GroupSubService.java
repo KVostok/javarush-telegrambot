@@ -3,6 +3,7 @@ package ru.kosmos.jrtb.service;
 import ru.kosmos.jrtb.javarushclient.dto.GroupDiscussionInfo;
 import ru.kosmos.jrtb.repository.entity.GroupSub;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -34,5 +35,12 @@ public interface GroupSubService {
      * @return {@link GroupSub} with provided ID or null otherwise.
      */
     Optional<GroupSub> findById(Integer id);
+
+    /**
+     * Find all {@link GroupSub}.
+     *
+     * @return list of {@link GroupSub} objects .
+     */
+    List<GroupSub> findAll();
 
 }
