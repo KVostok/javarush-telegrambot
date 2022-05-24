@@ -5,6 +5,8 @@ import ru.kosmos.jrtb.repository.entity.TelegramUser;
 import ru.kosmos.jrtb.service.SendBotMessageService;
 import ru.kosmos.jrtb.service.TelegramUserService;
 
+import static ru.kosmos.jrtb.command.CommandUtils.getChatId;
+
 /**
  * Start {@link Command}.
  */
@@ -25,7 +27,7 @@ public class StartCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        String chatId = update.getMessage().getChatId().toString();
+        Long chatId = getChatId(update);
 
         telegramUserService.findByChatId(chatId).ifPresentOrElse(
                 user -> {
