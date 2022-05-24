@@ -9,6 +9,8 @@ import ru.kosmos.jrtb.service.StatisticsService;
 
 import java.util.stream.Collectors;
 
+import static ru.kosmos.jrtb.command.CommandUtils.getChatId;
+
 /**
  * Statistics {@link Command}.
  */
@@ -39,7 +41,7 @@ public class StatCommand implements Command {
                 .map(it -> String.format("%s (id = %s) - %s подписчиков", it.getTitle(), it.getId(), it.getActiveUserCount()))
                 .collect(Collectors.joining("\n"));
 
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), String.format(STAT_MESSAGE,
+        sendBotMessageService.sendMessage(getChatId(update), String.format(STAT_MESSAGE,
                 statisticDTO.getActiveUserCount(),
                 statisticDTO.getInactiveUserCount(),
                 statisticDTO.getAverageGroupCountByUser(),
